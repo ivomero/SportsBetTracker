@@ -1,0 +1,19 @@
+body {
+  background-color: #859398;
+  margin: 0px;
+  text-align: center;
+}
+
+.HomePage {
+  background-image: url(https://cdn.sportsbettingdime.com/app/uploads/media/1/SoccerField.png);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  background-position: 50% 50%;
+  position: relative;
+  padding-top: 100px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: x-large;
+}
