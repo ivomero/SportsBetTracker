@@ -1,15 +1,37 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect, Fragment} from "react";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import './Games.css';
+
 
 
 
 const Games = (props) => {
     const[games, setGames]= useState([])
     const[databaseGames, setDatabaseGames]=useState([])
-    // const[matchUp, setMatchUp]= useState("")
+    // const[matchUp, setMatchUp]= useState()
 
+
+
+
+    const postComments = async () => {
+        try{
+
+            let comment ={  
+                "user_id": 1,
+                "comment": 0,
+                "game_id": 1
+            }
+            let response = await axios.post('http://127.0.0.1:8000/comments/', comment)
+            console.log(response.data)
+            
+
+        } catch (err) {
+            console.log("An error occured with postComments: ", err)
+            console.log(games)
+        }
+    }        
 
 
     const getGames = async () => {
@@ -88,22 +110,51 @@ const Games = (props) => {
     getGames()
     },[])
 
+    const handleCommentSubmit = async (e, user, game)=>{
+        e.preventDefault();
+        let comment ={
+            "user_id": user.user_id,
+            "comment": props.comment,
+            "game_id": game.id,
+        }
+        console.log("User Info: ", user)
+        let response = await axios.post('http://127.0.0.1:8000/comments/', comment);
+        console.log(response.data)
+        
+    }
+
+    const handleViewGame = (matchUp) => {
+        
+            <Link 
+                to={{
+                        pathname: "/view",
+                        match: matchUp
+                    }}
+                    />
+        
+            
+    }
     
         
 
     return (
         <Fragment>
             <div className='GamesList'>
-                <h1>Upcoming Games</h1>
+                <h1 className='upcoming'>Upcoming Games</h1>
                 {games.map((game)=> (
                     <div className='Games'>
-                        <h2 classname="away">{game.bookmakers[6].markets[0].outcomes[0].name}</h2>
+                        <h2 className="away">{game.bookmakers[6].markets[0].outcomes[0].name}</h2>
                         <h2 className="away">{game.bookmakers[6].markets[0].outcomes[0].price}</h2>
-                        <button className="button" onClick={props.postBet}>Bet Unit</button>
+                        <button className="button" onClick={()=> props.postBet(game, game.away_team, props.currentUser)}>Bet Unit</button>
                         <h2 className="home">{game.bookmakers[6].markets[0].outcomes[1].name}</h2>
                         <h2 className="home">{game.bookmakers[6].markets[0].outcomes[1].price}</h2>
                         <h4>{game.commence_time}</h4>
-                        <button className="button" onClick={props.postBet}>Bet Unit</button>
+                        <button className="button"  onClick={()=> props.postBet(game, game.home_team, props.currentUser)}>Bet Unit</button>
+                        <form onSubmit={(e)=>handleCommentSubmit(e,props.currentUser, game)}>
+                        <input type="text" placeholder="Write a Comment" onChange={(e)=> props.setComment(e.target.value)}></input>
+                        <button type="submit">Comment</button>
+                        </form>
+                        <button onClick={()=>handleViewGame(game)}>View Comments</button>
                     </div>
                 ))
             }

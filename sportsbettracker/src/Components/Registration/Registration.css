@@ -1,0 +1,83 @@
+.registration {
+  text-align: center;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.fn {
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: #66fcf1;
+  background-color: #0b0c10;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #c5c6c7;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.mn {
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: #66fcf1;
+  background-color: #0b0c10;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #c5c6c7;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.ln {
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: #66fcf1;
+  background-color: #0b0c10;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #c5c6c7;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.un {
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: #66fcf1;
+  background-color: #0b0c10;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #c5c6c7;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.em {
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: #66fcf1;
+  background-color: #0b0c10;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #c5c6c7;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.pw {
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: #66fcf1;
+  background-color: #0b0c10;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #c5c6c7;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.btn {
+  border-style: solid;
+  border-color: #66fcf1;
+  color: #c5c6c7;
+  background-color: #0b0c10;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}

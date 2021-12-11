@@ -1,0 +1,40 @@
+.username {
+  border-style: solid;
+  border-color: #66fcf1;
+  background-color: #0b0c10;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #c5c6c7;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.password {
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: #66fcf1;
+  background-color: #0b0c10;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #c5c6c7;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.lb {
+  color: #66fcf1;
+}
+
+.button {
+  border-style: solid;
+  border-color: #66fcf1;
+  color: #c5c6c7;
+  background-color: #0b0c10;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
+.login {
+  text-align: center;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}

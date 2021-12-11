@@ -2,7 +2,7 @@
   flex: 2;
 }
 
-.away {
+.home {
   flex: 1;
 }
 
@@ -10,13 +10,23 @@
   width: 50%;
   margin: 100px auto 100px auto;
   border-radius: 10px;
-  border: 10px solid black;
+  border-style: solid;
+  border-color: #66fcf1;
   text-align: center;
   padding-bottom: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #c5c6c7;
 }
 
 .button {
+  border-style: solid;
+  border-color: #66fcf1;
+  color: #c5c6c7;
+  background-color: #0b0c10;
   cursor: pointer;
+}
+
+.upcoming {
+  color: #66fcf1;
 }

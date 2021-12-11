@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './Registration.css'
 
 
 
@@ -43,15 +44,16 @@ export default function Registration() {
 
     return (
         <div className="registration">
+            <h1 className='Head'>Register</h1>
             <form>
-                <input type="text" id="firstname" placeholder="Enter your first name" />
-                <input type="text" id="middlename" placeholder="Enter your middle name" />
-                <input type="text" id="lastname" placeholder="Enter your last name" />
-                <input type="text" id="username" placeholder="Enter your username" />
-                <input type="text" id="password" placeholder="Enter your password (must be 8 characters and must contain numbe)" />
-                <input type="text" id="email" placeholder="Enter your email" />
+                <input type="text" className="fn" id="firstname" placeholder="Enter your first name" />
+                <input type="text" className="mn" id="middlename" placeholder="Enter your middle name" />
+                <input type="text" className="ln" id="lastname" placeholder="Enter your last name" />
+                <input type="text" className="un" id="username" placeholder="Enter your username" />
+                <input type="text" className="pw" id="password" placeholder="Enter your password" />
+                <input type="text" className="em" id="email" placeholder="Enter your email" />
 
-                <button type="submit" onClick={handleSubmitClick} > Register</button>
+                <button type="submit" className="btn" onClick={handleSubmitClick} > Register</button>
 
             </form>
         </div>

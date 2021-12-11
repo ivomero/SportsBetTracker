@@ -1,36 +1,37 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
+import './Login.css'
 
 const Login = (props) => {
-    const[userName, setUserName]= useState("");
-    const[password, setPassword]= useState("");
-    const [currentUser, setCurrentUser] = useState();
-    const [jwt, setJwt] = useState();
-    const[userLogin, setUserLogin]= useState()
+    // const[userName, setUserName]= useState("");
+    // const[password, setPassword]= useState("");
+    // const [currentUser, setCurrentUser] = useState();
+    // const [jwt, setJwt] = useState();
+    // const[userLogin, setUserLogin]= useState()
   
-    function getJWT() {
-      const jwt = localStorage.getItem('token');
-      setJwt(jwt);
-    }
+    // function getJWT() {
+    //   const jwt = localStorage.getItem('token');
+    //   setJwt(jwt);
+    // }
   
-    function getUser() {
-      try{
-        const user = jwtDecode(jwt);
-        console.log(user)
-        setCurrentUser(user)
-      } catch {
+    // function getUser() {
+    //   try{
+    //     const user = jwtDecode(jwt);
+    //     console.log(user)
+    //     setCurrentUser(user)
+    //   } catch {
   
-      }
-    }
+    //   }
+    // }
   
-    useEffect(()=> {
-        getJWT();
-    },[])
-    useEffect(()=> {
-        console.log(jwt)
-        getUser();
-    },[jwt])
+    // useEffect(()=> {
+    //     getJWT();
+    // },[])
+    // useEffect(()=> {
+    //     console.log(jwt)
+    //     getUser();
+    // },[jwt])
     // useEffect(()=> {
     //     getUserLogin();
     //     console.log(userLogin)
@@ -46,8 +47,8 @@ const Login = (props) => {
     const handleSubmit = async (e)=>{
         e.preventDefault();
         let user ={
-            "username": userName,
-            "password": password,
+            "username": props.username,
+            "password": props.password,
         }
         console.log("User Info: ", user)
         let response = await axios.post('http://127.0.0.1:8000/api/auth/login/', user);
@@ -55,18 +56,19 @@ const Login = (props) => {
         // add response to local storage.
         localStorage.setItem("token", response.data.access)
         localStorage.setItem("refresh", response.data.refresh)
-        getJWT()
+        props.getJWT()
         
     }
 
     return(
+        <div className="login">
+        <h1 className="Head">Login</h1>
         <form onSubmit={handleSubmit}>
-            <label>UserName</label>
-            <input type='text' onChange={(e)=>setUserName(e.target.value)}></input>
-            <label>Password</label>
-            <input type='password' onChange={(e)=>setPassword(e.target.value)}></input>
-            <button type='submit'>Click Me</button>
+            <input type='text' className="username" placeholder="Username" onChange={(e)=>props.setUsername(e.target.value)}></input>
+            <input type='password' className="password" placeholder="Password" onChange={(e)=>props.setPassword(e.target.value)}></input>
+            <button type='submit' className="button">Click Me</button>
         </form>
+        </div>
     )
 }
 export default Login; 

@@ -6,11 +6,11 @@ const Bets = (props) => {
 
     // const postBet = async (e)=>{
     //     e.preventDefault();
-    //     let bet ={  
-    //         "user_id": 0,
-    //         "unit_bet": 0,
-    //         "game_id": 0
-    //     }
+        // let bet ={  
+        //     "user_id": 0,
+        //     "unit_bet": 0,
+        //     "game_id": 0
+        // }
     //     let response = await axios.post('http://127.0.0.1:8000/bets', bet);
     //     console.log(response.data)
     // }
