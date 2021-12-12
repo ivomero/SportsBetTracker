@@ -1,0 +1,16 @@
+.displayGame {
+  width: 50%;
+  margin: 100px auto 100px auto;
+  border-style: solid;
+  border-color: #66fcf1;
+  margin-top: 200px;
+  color: #c5c6c7;
+}
+
+.cot {
+  color: #c5c6c7;
+}
+
+.viewDiv {
+  color: #c5c6c7;
+}

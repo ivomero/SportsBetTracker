@@ -123,17 +123,17 @@ const Games = (props) => {
         
     }
 
-    const handleViewGame = (matchUp) => {
+    // const handleViewGame = (matchUp) => {
         
-            <Link 
-                to={{
-                        pathname: "/view",
-                        match: matchUp
-                    }}
-                    />
+    //         // <Link 
+    //         //     to={{
+    //         //             pathname: "/view",
+    //         //             match: matchUp
+    //         //         }}
+    //         //         />
         
             
-    }
+    // }
     
         
 
@@ -154,7 +154,17 @@ const Games = (props) => {
                         <input type="text" placeholder="Write a Comment" onChange={(e)=> props.setComment(e.target.value)}></input>
                         <button type="submit">Comment</button>
                         </form>
-                        <button onClick={()=>handleViewGame(game)}>View Comments</button>
+                        <Link
+                            to={`/game-comments/${game.id}`}
+                            >
+                            View Comments
+                        </Link>
+                        {/* <button onClick={()=>handleViewGame(game)}>View Comments</button> */}
+                        {/* <Link to={{
+                            pathname: "/view",
+                            state: {match: {game} }}}>
+                        View Comments
+                        </Link> */}
                     </div>
                 ))
             }

@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 const View = (props) => {
     const [games, setGames]= useState([])
     const[comments, setComments] = useState([])
     const[users, setUsers]= useState([])
+
+    // const location = useLocation()
+    // const { match } = location.state
+
+    
 
     const getComments = async () => {
         
@@ -41,6 +47,7 @@ const View = (props) => {
         
 
 }
+    
 
     useEffect(()=> {
     getUsers()
@@ -49,7 +56,8 @@ const View = (props) => {
     },[])
 
     return (
-            <h1>{props.match.away_team} vs {props.match.home_team}</h1>
+            <h1>{props.gameView.away_team} vs { props.gameView.home_team}</h1>
+            //display username //display commnet
     )
 
 }

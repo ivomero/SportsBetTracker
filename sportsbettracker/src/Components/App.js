@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 import jwtDecode from 'jwt-decode';
 import Navbar from './Nav/Nav';
 import View from './View/View';
+import GameComments from './GameComments/GameComments';
 
 
 
@@ -22,6 +23,7 @@ function App(props) {
     const [jwt, setJwt] = useState();
     const[userLogin, setUserLogin]= useState()
     const[comment, setComment]=useState("")
+    
   
     function getJWT() {
       const jwt = localStorage.getItem('token');
@@ -77,16 +79,19 @@ function App(props) {
       <Routes>
          <Route path="/" exact={true} element={<Login setUsername={setUsername} username={username} setPassword={setPassword} password={password} getJWT={getJWT} />}>
          </Route>
-         <Route path="/home" exact={true} element={<Home/>}>
+         <Route path="/home"  element={<Home/>}>
          </Route>
-         <Route path="/games" exact={true} element={<Games postBet={postBet} currentUser={currentUser} setComment={setComment} comment={comment}/>}>
+         <Route path="/games"  element={<Games postBet={postBet} currentUser={currentUser} setComment={setComment} comment={comment} /> }>
          </Route>
-         <Route path ="/register" exact={true} element={<Registration />}>
+         <Route path ="/register"  element={<Registration />}>
          </Route>
-         <Route path ="/profile" exact={true} element={<Profile />}>
+         <Route path ="/profile"  element={<Profile />}>
          </Route>
-         <Route path ="/view" exact={true} element={<View />}>
+         {/* <Route path ="/view" exact={true} element={<View />}>
+         </Route> */}
+         <Route path ="/game-comments/:id" element={<GameComments />}>
          </Route>
+         
        </Routes>
 
     </div>

@@ -50,7 +50,7 @@ const Navbar = () => {
 
                 <li>
                   <Link to="/" >
-                    <i class="fas fa-sign-in-alt"></i> Logout Here
+                    <i class="fas fa-sign-in-alt"></i> Logout
                   </Link>
                 </li>
               </ul>
