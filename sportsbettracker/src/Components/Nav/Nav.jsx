@@ -1,11 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Nav.scss';
+import "./Nav.scss";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  //   const refreshPage = () => {
+  //     window.location.reload();
+  //   };
+  const logOut = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("refresh");
+    // refreshPage();
+    window.location = "/";
+  };
 
-    return (
-        <div className="App">
+  return (
+    <div className="App">
       <nav id="nav-bar">
         <div className="container">
           <div className="section">
@@ -29,7 +38,7 @@ const Navbar = () => {
 
                 <li>
                   <Link to="/games">
-                    <i class="fas fa-dollar-sign"></i>  Games
+                    <i class="fas fa-dollar-sign"></i> Games
                   </Link>
                 </li>
                 <li>
@@ -49,7 +58,7 @@ const Navbar = () => {
                 </li>
 
                 <li>
-                  <Link to="/" >
+                  <Link to="/" onClick={() => logOut()}>
                     <i class="fas fa-sign-in-alt"></i> Logout
                   </Link>
                 </li>
@@ -58,7 +67,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      </div>
-    )
-}
+    </div>
+  );
+};
 export default Navbar;
